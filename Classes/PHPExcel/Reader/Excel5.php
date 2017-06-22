@@ -6674,7 +6674,7 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
                 // offset: 1; size: 2; one-based index to definedname record
                 $definedNameIndex = self::getInt2d($formulaData, 1) - 1;
                 // offset: 2; size: 2; not used
-                $data = $this->definedname[$definedNameIndex]['name'];
+                $data = isset($this->definedname[$definedNameIndex])?$this->definedname[$definedNameIndex]['name']:'';
                 break;
             case 0x24:    //    single cell reference e.g. A5
             case 0x44:
